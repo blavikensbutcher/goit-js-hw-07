@@ -34,15 +34,15 @@ function handleClick(event) {
 
     const instance = basicLightbox.create(`
 	<img src=${event.target.dataset.source}
-
     >
 `)
     instance.show();
 
 
-    gallery.addEventListener('keydown', handlePress);
+    document.addEventListener('keypress', handlePress);
     function handlePress(event) {
-        if (event.key === "Escape") {
+        console.log(event)
+        if (event.code === "Escape") {
             instance.close()
         }
     }

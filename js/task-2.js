@@ -25,6 +25,12 @@ const images = [
   },
 ];
 
+const container = document.querySelector(".gallery");
+container.style.display = "flex";
+container.style.flexWrap = "wrap";
+container.style.gap = "10px";
+container.style.listStyle = "none";
+
 const markup = images
   .map(
     ({ url, alt }) =>

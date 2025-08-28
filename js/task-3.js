@@ -1,6 +1,5 @@
 const input = document.querySelector("#name-input");
 const nameToChange = document.querySelector("#name-output");
-const lastSeen = nameToChange.textContent;
 
 const changeHandler = (e) => {
   const newValue = e.target.value.trim();
@@ -8,7 +7,7 @@ const changeHandler = (e) => {
   if (newValue.length > 0) {
     nameToChange.textContent = newValue;
   } else {
-    nameToChange.textContent = lastSeen;
+    nameToChange.textContent = "Anonymous";
   }
 };
 

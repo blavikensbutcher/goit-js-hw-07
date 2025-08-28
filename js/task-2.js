@@ -25,20 +25,11 @@ const images = [
   },
 ];
 
-const container = document.querySelector(".gallery");
-container.style.display = "flex";
-container.style.flexWrap = "wrap";
-container.style.gap = "10px";
+const markup = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src="${url}" alt="${alt}" width="400" height="400" style="border-radius:10px" /></li>`
+  )
+  .join("");
 
-// погратись з селекторами без css :)
-
-images.forEach((element) => {
-  const img = document.createElement("img");
-
-  img.src = element.url;
-  img.alt = element.alt;
-  img.width = 400;
-  img.height = 400;
-  img.style.borderRadius = "10px";
-  container.appendChild(img);
-});
+container.insertAdjacentHTML("beforeend", markup);
